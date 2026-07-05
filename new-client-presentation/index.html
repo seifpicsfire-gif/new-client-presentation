@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growth Plan - معمل تحاليل طبية | Digital Solutions</title>
+  <!-- Google Fonts Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons for Consulting Premium Look -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Link to the main style stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sidebar Toggle (Mobile viewports) -->
+  <button id="sidebarToggle" class="sidebar-toggle" aria-label="عرض القائمة">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div class="presentation-container">
+    
+    <!-- Right Sidebar Navigation -->
+    <aside class="sidebar-navigation" id="sidebarNav">
+      <div class="sidebar-header">
+        <div>
+          <div class="sidebar-logo">
+            <span>Digital</span> Solutions
+          </div>
+          <div class="sidebar-logo-sub">خطة النمو الاستراتيجية - معمل التحاليل</div>
+        </div>
+      </div>
+      <ul class="sidebar-menu" id="sidebarMenu">
+        <!-- Dynamically populated sections -->
+      </ul>
+    </aside>
+
+    <!-- Slide Content Area (Left side) -->
+    <main class="slide-area">
+      
+      <!-- Top Slide Header -->
+      <header class="slide-header">
+        <div class="breadcrumb" id="slideBreadcrumb">
+          <span class="root">Digital Solutions</span>
+          <span class="separator"><i class="fas fa-chevron-left"></i></span>
+          <span class="current-section" id="breadcrumbSection">البداية</span>
+        </div>
+        <div class="slide-actions">
+          <button class="btn-icon" id="btnHelp" title="مساعدة لوحة المفاتيح">
+            <i class="fas fa-keyboard"></i>
+          </button>
+          <button class="btn-icon" id="btnAutoplay" title="تشغيل تلقائي">
+            <i class="fas fa-play" id="autoplayIcon"></i>
+          </button>
+          <button class="btn-icon" id="btnFullscreen" title="ملء الشاشة">
+            <i class="fas fa-expand" id="fullscreenIcon"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Slide Viewport -->
+      <section class="slide-viewport" id="slideViewport">
+        <!-- Slides are rendered here dynamically via JS -->
+      </section>
+
+      <!-- Bottom Controls (Footer) -->
+      <footer class="controls-bar">
+        <div class="slide-info" id="slideIndicator">
+          شريحة 1 من 72
+        </div>
+        <div class="navigation-buttons">
+          <button class="btn-nav" id="btnPrev" disabled>
+            <i class="fas fa-arrow-right"></i> السابق
+          </button>
+          <button class="btn-nav" id="btnNext">
+            التالي <i class="fas fa-arrow-left"></i>
+          </button>
+        </div>
+        <div class="playback-controls">
+          <span style="font-size: 12px; color: var(--color-text-secondary);" id="autoplayStatus">تلقائي: متوقف</span>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Fullscreen Toast Notification -->
+  <div class="fullscreen-toast" id="fullscreenToast">
+    <i class="fas fa-info-circle"></i>
+    <span id="toastText">تم الانتقال إلى وضع ملء الشاشة. اضغط ESC للخروج.</span>
+  </div>
+
+  <!-- Keyboard Help Modal -->
+  <div class="modal-overlay" id="helpModalOverlay">
+    <div class="modal-content">
+      <h3 class="modal-title">
+        <button class="modal-close" id="btnCloseHelp">&times;</button>
+        <span>مفاتيح التحكم بالعرض</span>
+      </h3>
+      <ul class="keyboard-shortcut-list">
+        <li class="shortcut-item">
+          <div class="shortcut-keys">
+            <kbd class="key-badge">← ArrowLeft</kbd>
+            <kbd class="key-badge">Space</kbd>
+            <kbd class="key-badge">PageDown</kbd>
+          </div>
+          <span class="shortcut-desc">الانتقال للشريحة التالية</span>
+        </li>
+        <li class="shortcut-item">
+          <div class="shortcut-keys">
+            <kbd class="key-badge">→ ArrowRight</kbd>
+            <kbd class="key-badge">PageUp</kbd>
+          </div>
+          <span class="shortcut-desc">الانتقال للشريحة السابقة</span>
+        </li>
+        <li class="shortcut-item">
+          <div class="shortcut-keys">
+            <kbd class="key-badge">F</kbd>
+          </div>
+          <span class="shortcut-desc">تفعيل/إلغاء وضع ملء الشاشة</span>
+        </li>
+        <li class="shortcut-item">
+          <div class="shortcut-keys">
+            <kbd class="key-badge">A</kbd>
+          </div>
+          <span class="shortcut-desc">تشغيل/إيقاف العرض التلقائي</span>
+        </li>
+        <li class="shortcut-item">
+          <div class="shortcut-keys">
+            <kbd class="key-badge">Esc</kbd>
+          </div>
+          <span class="shortcut-desc">إغلاق نافذة المساعدة أو الخروج</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Load Data and Main logic Scripts -->
+  <script src="data.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
